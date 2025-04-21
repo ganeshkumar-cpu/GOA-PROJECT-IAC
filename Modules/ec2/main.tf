@@ -1,6 +1,7 @@
 resource "aws_instance" "api_server_1" {
   ami                    = var.api_server_1_ami
   instance_type          = "t3a.xlarge"
+  key_name               = var.api_servers_key_name
   root_block_device {
     volume_size = 100
   }
@@ -10,6 +11,7 @@ resource "aws_instance" "api_server_1" {
 resource "aws_instance" "api_server_2" {
   ami                    = var.api_server_2_ami
   instance_type          = "t3a.xlarge"
+  key_name               = var.api_servers_key_name
   root_block_device {
     volume_size = 100
   }
@@ -19,6 +21,7 @@ resource "aws_instance" "api_server_2" {
 resource "aws_instance" "web_db_server" {
   ami                    = var.web_db_server_ami
   instance_type          = "m6g.4xlarge"
+  key_name               = var.web_db_key_name
   root_block_device {
     volume_size = 500
   }
