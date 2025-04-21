@@ -22,3 +22,12 @@ variable "api_server_2_sg_id" {
 variable "web_db_server_sg_id" {
   description = "The security group ID for the Web DB Server"
 }
+variable "api_servers_key_name" {
+  description = "The key pair name for API servers (api_server_1 and api_server_2)"
+  type        = string
+}
+
+variable "web_db_key_name" {
+  description = "The key pair name for the Web DB server"
+  type        = string
+}
