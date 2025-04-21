@@ -1,4 +1,3 @@
-# modules/ec2/main.tf
 resource "aws_instance" "api_server_1" {
   ami                    = var.api_server_1_ami
   instance_type          = "t3a.xlarge"
