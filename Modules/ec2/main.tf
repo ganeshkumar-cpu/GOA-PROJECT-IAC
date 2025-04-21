@@ -1,5 +1,6 @@
+# modules/ec2/main.tf
 resource "aws_instance" "api_server_1" {
-  ami                    = "ami-1234567890abcdef0"  # Replace with real AMI
+  ami                    = var.api_server_1_ami
   instance_type          = "t3a.xlarge"
   root_block_device {
     volume_size = 100
@@ -8,7 +9,7 @@ resource "aws_instance" "api_server_1" {
 }
 
 resource "aws_instance" "api_server_2" {
-  ami                    = "ami-1234567890abcdef0"
+  ami                    = var.api_server_2_ami
   instance_type          = "t3a.xlarge"
   root_block_device {
     volume_size = 100
@@ -17,7 +18,7 @@ resource "aws_instance" "api_server_2" {
 }
 
 resource "aws_instance" "web_db_server" {
-  ami                    = "ami-1234567890abcdef0"
+  ami                    = var.web_db_server_ami
   instance_type          = "m6g.4xlarge"
   root_block_device {
     volume_size = 500
