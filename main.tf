@@ -1,17 +1,13 @@
-provider "aws" {
-  region = "ap-south-1"
-}
-
 module "vpc" {
   source                  = "./modules/vpc"
-  vpc_cidr                = "10.0.0.0/16"
-  vpc_name                = "Goa_vpc"
-  public_subnet_cidr      = "10.0.1.0/24"
-  public_subnet_az        = "ap-south-1a"
-  private_subnet_cidr     = "10.0.2.0/24"
-  private_subnet_az       = "ap-south-1b"
-  public_db_subnet_cidr   = "10.0.3.0/24"
-  public_db_subnet_az     = "ap-south-1a"
+  vpc_cidr                = var.vpc_cidr
+  vpc_name                = var.vpc_name
+  public_subnet_cidr      = var.public_subnet_cidr
+  public_subnet_az        = var.public_subnet_az
+  private_subnet_cidr     = var.private_subnet_cidr
+  private_subnet_az       = var.private_subnet_az
+  public_db_subnet_cidr   = var.public_db_subnet_cidr
+  public_db_subnet_az     = var.public_db_subnet_az
 }
 
 module "security_group" {
@@ -26,11 +22,10 @@ module "ec2_instances" {
   api_server_2_sg_id    = module.security_group.api_server_2_sg_id
   web_db_server_sg_id   = module.security_group.web_db_server_sg_id
 
-  api_server_1_ami      = "ami-0dee22c13ea7a9a67"
-  api_server_2_ami      = "ami-0dee22c13ea7a9a67"
-  web_db_server_ami     = "ami-0c8eea98010057bd0"
+  api_server_1_ami      = var.api_server_1_ami
+  api_server_2_ami      = var.api_server_2_ami
+  web_db_server_ami     = var.web_db_server_ami
 
-  api_servers_key_name  = "goaDB"
-  web_db_key_name       = "goa"
+  api_servers_key_name  = var.api_servers_key_name
+  web_db_key_name       = var.web_db_key_name
 }
-
