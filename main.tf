@@ -29,5 +29,8 @@ module "ec2_instances" {
   api_server_1_ami      = "ami-0dee22c13ea7a9a67"
   api_server_2_ami      = "ami-0dee22c13ea7a9a67"
   web_db_server_ami     = "ami-0c8eea98010057bd0"
+
+  api_servers_key_name  = "goaDB"
+  web_db_key_name       = "goa"
 }
 
