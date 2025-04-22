@@ -24,3 +24,14 @@ output "private_subnet_id" {
 output "public_db_subnet_id" {
   value = module.vpc.public_db_subnet_id
 }
+output "api_server_1_sg_id_from_root" {
+  value = module.security_group.api_server_1_sg_id
+}
+
+output "api_server_2_sg_id_from_root" {
+  value = module.security_group.api_server_2_sg_id
+}
+
+output "web_db_server_sg_id_from_root" {
+  value = module.security_group.web_db_server_sg_id
+}
