@@ -29,3 +29,16 @@ module "ec2_instances" {
   api_servers_key_name  = var.api_servers_key_name
   web_db_key_name       = var.web_db_key_name
 }
+
+# Add these output values below the modules
+output "api_server_1_sg_id_from_root" {
+  value = module.security_group.api_server_1_sg_id
+}
+
+output "api_server_2_sg_id_from_root" {
+  value = module.security_group.api_server_2_sg_id
+}
+
+output "web_db_server_sg_id_from_root" {
+  value = module.security_group.web_db_server_sg_id
+}
