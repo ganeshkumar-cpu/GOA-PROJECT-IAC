@@ -1,15 +1,3 @@
-variable "api_server_1_sg_id" {
-  description = "The security group ID to be associated with API Server 1 instance."
-}
-
-variable "api_server_2_sg_id" {
-  description = "The security group ID to be associated with API Server 2 instance."
-}
-
-variable "web_db_server_sg_id" {
-  description = "The security group ID to be associated with the Web DB Server instance."
-}
-
 variable "vpc_cidr" {
   description = "The CIDR block for the VPC."
 }
