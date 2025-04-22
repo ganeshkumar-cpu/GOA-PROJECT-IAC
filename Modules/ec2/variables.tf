@@ -31,3 +31,7 @@ variable "web_db_key_name" {
   description = "The key pair name for the Web DB server"
   type        = string
 }
+variable "vpc_id" {
+  description = "The VPC ID where the EC2 instances will be launched."
+}
+
